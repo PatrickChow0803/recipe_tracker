@@ -5,13 +5,15 @@
 // therefore this interface file should be here. This interface MUST be fulfilled, whether it's from Firebase or RestApi
 // This interface allows us to implement the application logic without any FirebaseAuth dependencies!!!
 import 'package:dartz/dartz.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:recipe_tracker/auth/domain/user.dart';
 
 import 'auth_failure.dart';
 
 abstract class IAuthFacade {
-  // Option Type is basically a non-nullable type which can either hold none or some user
-  Future<User> getSignedInUser();
+  MyUser _userFromFirebase(User user);
+
+  MyUser getSignedInUser();
 
   // Use Unit here instead of void when working with the Either type.
   // This is because Unit is an actual class whereas void is just a keyword !!!
