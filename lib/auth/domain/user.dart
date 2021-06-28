@@ -7,7 +7,7 @@ part 'user.freezed.dart';
 class User with _$User {
   const User._();
   const factory User({
-    required List<Recipe> userCreatedRecipes,
-    required List<Recipe> favoriteRecipes,
+    required final List<Recipe> userCreatedRecipes,
+    required final List<Recipe> favoriteRecipes,
   }) = _User;
 }

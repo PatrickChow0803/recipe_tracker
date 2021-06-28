@@ -6,10 +6,10 @@ part 'recipe_model.freezed.dart';
 class Recipe with _$Recipe {
   const Recipe._();
   const factory Recipe({
-    required String name,
-    required String description,
-    required String createdBy,
-    required List<String> ingredients,
-    required DateTime addedOn,
+    required final String name,
+    required final String description,
+    required final String createdBy,
+    required final List<String> ingredients,
+    required final DateTime addedOn,
   }) = _Recipe;
 }
