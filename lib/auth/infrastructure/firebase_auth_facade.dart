@@ -16,9 +16,17 @@ class FirebaseAuthFacade with ChangeNotifier implements IAuthFacade {
     this._googleSignIn,
   );
 
+  // converts the Firebase user to MyUser for Abstraction
+  @override
+  MyUser _userFromFirebase(User user) {
+    return MyUser(
+      userId: user.uid,
+    );
+  }
+
   @override
   MyUser getSignedInUser() {
-    return MyUser(userId: _firebaseAuth.currentUser!.uid);
+    return _userFromFirebase(_firebaseAuth.currentUser!);
   }
 
   @override

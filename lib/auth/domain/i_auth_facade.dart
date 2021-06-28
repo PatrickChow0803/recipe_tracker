@@ -5,11 +5,14 @@
 // therefore this interface file should be here. This interface MUST be fulfilled, whether it's from Firebase or RestApi
 // This interface allows us to implement the application logic without any FirebaseAuth dependencies!!!
 import 'package:dartz/dartz.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:recipe_tracker/auth/domain/user.dart';
 
 import 'auth_failure.dart';
 
 abstract class IAuthFacade {
+  MyUser _userFromFirebase(User user);
+
   MyUser getSignedInUser();
 
   // Use Unit here instead of void when working with the Either type.
