@@ -10,8 +10,7 @@ import 'package:recipe_tracker/auth/domain/user.dart';
 import 'auth_failure.dart';
 
 abstract class IAuthFacade {
-  // Option Type is basically a non-nullable type which can either hold none or some user
-  Future<User> getSignedInUser();
+  MyUser getSignedInUser();
 
   // Use Unit here instead of void when working with the Either type.
   // This is because Unit is an actual class whereas void is just a keyword !!!
